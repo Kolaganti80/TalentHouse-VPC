@@ -4,9 +4,9 @@ module "asg" {
   # Autoscaling group
   name = "example-asg"
 
-  min_size                  = 0
-  max_size                  = 1
-  desired_capacity          = 1
+  min_size                  = 2
+  max_size                  = 5
+  desired_capacity          = 3
   wait_for_capacity_timeout = 0
   health_check_type         = "EC2"
   vpc_zone_identifier       = ["subnet-1235678", "subnet-87654321"]
@@ -126,7 +126,7 @@ module "asg" {
   ]
 
   placement = {
-    availability_zone = "us-west-1b"
+    availability_zone = "eu-west-1a"
   }
 
   tag_specifications = [
@@ -146,6 +146,6 @@ module "asg" {
 
   tags = {
     Environment = "dev"
-    Project     = "megasecret"
+    Project     = "TalentHouse"
   }
 }
